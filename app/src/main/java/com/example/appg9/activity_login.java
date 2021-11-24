@@ -36,7 +36,7 @@ public class activity_login extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(menuItem);
     }
-    public void gotoActivityMain(View view) {
+    public void gotoActivityLogin(View view) {
         Intent newIntent = new Intent(this, MainActivity.class);
         newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(newIntent);
