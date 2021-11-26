@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">AppG9</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="evento">Evento</string>
+    <string name="contacto">Contacto</string>
+    <string name="fecha">Fecha</string>
+    <string name="tipo">Tipo</string>
+    <string name="hora">Hora</string>
+    <string name="valor">Valor</string>
 </resources>
