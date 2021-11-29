@@ -10,13 +10,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.appg9.databinding.ActivityMapsBinding;
-
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class MainActivity extends AppCompatActivity {
-    ArrayList<String> datos;
+    ArrayList<Event> eventList;
     RecyclerView recycler;
 
     @Override
@@ -28,13 +27,20 @@ public class MainActivity extends AppCompatActivity {
 
         recycler = (RecyclerView) findViewById(R.id.recyclerId);
         recycler .setLayoutManager(new LinearLayoutManager(this));
-        datos = new ArrayList<>();
-        for (int i = 0; i < 50; i++) {
-            datos.add("dato #: " + i);
-        }
-        AdapterEvents adapterEvents = new AdapterEvents(datos);
+        eventList = new ArrayList<>();
+        addEvent();
+        AdapterEvents adapterEvents = new AdapterEvents(eventList);
         recycler.setAdapter(adapterEvents);
     }
+
+    private void addEvent() {
+        eventList.add(new Event(R.drawable.one,"evento 1", "generico", new Date(), new Date(), "contacto", 10.000));
+        eventList.add(new Event(R.drawable.two,"evento 2", "generico", new Date(), new Date(), "contacto2", 20.000));
+        eventList.add(new Event(R.drawable.one,"evento 1", "generico", new Date(), new Date(), "contacto", 10.000));
+        eventList.add(new Event(R.drawable.two,"evento 2", "generico", new Date(), new Date(), "contacto2", 20.000));
+
+    }
+
     public void gotoActivityLogin(View view){
         Intent newIntent = new Intent(this , activity_login.class);
         newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

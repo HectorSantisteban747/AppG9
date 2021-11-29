@@ -26,7 +26,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/img_id"
                 android:layout_width="250dp"
                 android:layout_height="141dp"
                 android:layout_marginTop="16dp"
@@ -44,7 +44,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/evento"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+                app:layout_constraintTop_toBottomOf="@+id/img_id" />
 
             <TextView
                 android:id="@+id/contac_info_id"
@@ -94,7 +94,7 @@
                 android:layout_marginTop="4dp"
                 android:text="TextView"
                 app:layout_constraintStart_toEndOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+                app:layout_constraintTop_toBottomOf="@+id/img_id" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -104,7 +104,7 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/tipo"
                 app:layout_constraintStart_toEndOf="@+id/event_info_id"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+                app:layout_constraintTop_toBottomOf="@+id/img_id" />
 
             <TextView
                 android:id="@+id/type_info_id"
@@ -115,7 +115,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.289"
                 app:layout_constraintStart_toEndOf="@+id/textView6"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+                app:layout_constraintTop_toBottomOf="@+id/img_id" />
 
             <TextView
                 android:id="@+id/textView8"
