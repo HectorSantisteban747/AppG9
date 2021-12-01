@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         addEvent();
         AdapterEvents adapterEvents = new AdapterEvents(eventList);
         recycler.setAdapter(adapterEvents);
+
+//        FloatingActionButton ubication = (FloatingActionButton) findViewById()
     }
 
     private void addEvent() {
