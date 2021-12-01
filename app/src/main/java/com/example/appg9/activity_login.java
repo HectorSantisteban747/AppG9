@@ -9,6 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class activity_login extends AppCompatActivity {
 
     @Override
@@ -24,6 +27,10 @@ public class activity_login extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //ocultar actionbar
         getSupportActionBar().hide();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+
+        myRef.setValue("Hello, World!");
     }
     public void onBackPressed(){
         finish();
