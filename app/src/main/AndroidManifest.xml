@@ -9,6 +9,7 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-feature android:name="android.hardware.location.gps"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -17,7 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppG9" >
-
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -35,13 +38,13 @@
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreen"
             android:exported="false" />
         <activity
             android:name=".activity_login"
             android:exported="true" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".CreateEvent"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
