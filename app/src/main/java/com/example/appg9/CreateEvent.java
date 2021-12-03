@@ -21,6 +21,11 @@ public class CreateEvent extends AppCompatActivity {
         setContentView(R.layout.activity_create_event);
         img = (ImageView) findViewById(R.id.new_img);
     }
+    public void gotoActivityMap(View view) {
+        Intent newIntent = new Intent(this,MapsActivity.class);
+        newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(newIntent);
+    }
 
     public void loagImg(View view){
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -37,4 +42,5 @@ public class CreateEvent extends AppCompatActivity {
         }
 
     }
+
 }
