@@ -38,13 +38,13 @@
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".CreateEvent"
             android:exported="false" />
         <activity
             android:name=".activity_login"
             android:exported="true" />
         <activity
-            android:name=".CreateEvent"
+            android:name=".SplashScreen"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
