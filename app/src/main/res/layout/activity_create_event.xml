@@ -88,9 +88,9 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginBottom="10dp"
-      android:text="Ubicacion"
       android:backgroundTint="#203DA3"
-  />
+      android:onClick="gotoActivityMap"
+      android:text="Ubicacion" />
 
   <Button
       android:id="@+id/button2"
