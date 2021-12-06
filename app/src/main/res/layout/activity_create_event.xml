@@ -18,7 +18,7 @@
         tools:context=".CreateEvent" >
 
       <ImageView
-          android:id="@+id/new_img"
+          android:id="@+id/new_img_form"
           android:layout_width="match_parent"
           android:layout_height="150dp"
           android:layout_marginBottom="20dp"
@@ -36,61 +36,67 @@
           android:text="@string/seleccionar_imagen" />
 
       <EditText
-          android:id="@+id/editTextTextPersonName"
+          android:id="@+id/event_form_id"
           android:layout_width="match_parent"
           android:layout_height="48dp"
           android:layout_marginBottom="10dp"
           android:ems="10"
           android:hint="@string/nombre_evento"
-          android:inputType="textPersonName" />
+          android:inputType="textPersonName"
+          android:text="my event" />
 
       <EditText
-          android:id="@+id/editTextTextPersonName2"
+          android:id="@+id/type_form_id"
           android:layout_width="match_parent"
           android:layout_height="48dp"
           android:layout_marginBottom="10dp"
           android:ems="10"
           android:hint="@string/tipo"
-          android:inputType="textPersonName" />
+          android:inputType="textPersonName"
+          android:text="Cultural"/>
 
       <EditText
-          android:id="@+id/editTextTime"
+          android:id="@+id/time_form_id"
           android:layout_width="match_parent"
           android:layout_height="48dp"
           android:layout_marginBottom="10dp"
           android:ems="10"
           android:hint="@string/hora"
-          android:inputType="time" />
+          android:inputType="time"
+          android:text="10:30"/>
 
       <EditText
-          android:id="@+id/editTextDate"
+          android:id="@+id/date_form_id"
           android:layout_width="match_parent"
           android:layout_height="48dp"
           android:layout_marginBottom="10dp"
           android:ems="10"
           android:hint="@string/fecha"
-          android:inputType="date" />
+          android:inputType="date"
+          android:text="12/10/2021"/>
 
       <EditText
-          android:id="@+id/editTextNumberSigned"
+          android:id="@+id/value_form_id"
           android:layout_width="match_parent"
           android:layout_height="48dp"
           android:layout_marginBottom="10dp"
           android:ems="10"
           android:hint="@string/valor"
-          android:inputType="numberSigned" />
+          android:inputType="numberSigned"
+          android:text="20000"/>
 
       <EditText
-          android:id="@+id/editTextTextPersonName3"
+          android:id="@+id/contact_form_id"
           android:layout_width="match_parent"
           android:layout_height="48dp"
           android:layout_marginBottom="10dp"
           android:ems="10"
           android:hint="@string/contacto"
-          android:inputType="textPersonName" />
+          android:inputType="textPersonName"
+          android:text="yo"/>
 
       <Button
-          android:id="@+id/btn_ubication_id"
+          android:id="@+id/btn_getUbicacion"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginBottom="10dp"
@@ -99,11 +105,12 @@
           android:text="Ubicacion" />
 
       <Button
-          android:id="@+id/button2"
+          android:id="@+id/btn_createEvent"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginBottom="10dp"
           android:backgroundTint="#203DA3"
+          android:onClick="crearteEvent"
           android:text="Crear Evento" />
     </LinearLayout>
   </ScrollView>

@@ -11,6 +11,16 @@ public class Event {
     private String contact;
     private double value;
 
+    public Event(){}
+
+    public Event(int img, String event, String type, String contact, double value) {
+        this.img = img;
+        this.event = event;
+        this.type = type;
+        this.contact = contact;
+        this.value = value;
+    }
+
     public Event(int img, String event, String type, Date date, Date time, String contact, double value) {
         this.img = img;
         this.event = event;

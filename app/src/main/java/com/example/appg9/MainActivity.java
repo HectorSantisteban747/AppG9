@@ -5,13 +5,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.appg9.databinding.ActivityMapsBinding;
+import com.example.appg9.utilities.Utilities;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -19,6 +24,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
     ArrayList<Event> eventList;
     RecyclerView recycler;
+    ConnexionSqlLiteHelper conn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +33,38 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "onCreate", Toast.LENGTH_SHORT).show();
         Log.i("información","onCreate");
 
+        conn = new ConnexionSqlLiteHelper(getApplicationContext(), "db_events", null, 1);
+        eventList = new ArrayList<>();
+
         recycler = (RecyclerView) findViewById(R.id.recyclerId);
         recycler .setLayoutManager(new LinearLayoutManager(this));
-        eventList = new ArrayList<>();
         addEvent();
-        AdapterEvents adapterEvents = new AdapterEvents(eventList);
-        recycler.setAdapter(adapterEvents);
+
+
+        try {
+            consultarEventos();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void consultarEventos() throws ParseException {
+        SQLiteDatabase db = conn.getReadableDatabase();
+
+        Event event = null;
+        Cursor cursor = db.rawQuery("SELECT * FROM " + Utilities.TABLA_EVENTS, null);
+        while(cursor.moveToNext()){
+            Date date = new SimpleDateFormat("dd/mm/yyyy").parse(cursor.getString(3));
+            Date time = new SimpleDateFormat("dd/mm/yyyy").parse(cursor.getString(4));
+
+            event = new Event(cursor.getInt(0), cursor.getString(1), cursor.getString(2), date, time,
+                    cursor.getString(5), cursor.getLong(6) );
+
+            eventList.add(event);
+
+            AdapterEvents adapterEvents = new AdapterEvents(eventList);
+            recycler.setAdapter(adapterEvents);
+        }
     }
 
     private void addEvent() {
