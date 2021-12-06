@@ -1,103 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="20dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginRight="20dp"
-    android:layout_marginBottom="10dp"
-    android:orientation="vertical"
-    tools:context=".CreateEvent">
 
-  <ImageView
-      android:id="@+id/new_img"
-      android:layout_width="match_parent"
-      android:layout_height="150dp"
-      android:layout_marginBottom="20dp"
-      android:contentDescription="@string/imagen_del_evento"
-      android:padding="10dp"
-      app:srcCompat="@android:drawable/ic_menu_camera" />
 
-  <Button
-      android:id="@+id/button"
+  <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="30dp"
-      android:backgroundTint="#203DA3"
-      android:onClick="loagImg"
-      android:text="@string/seleccionar_imagen" />
+      android:layout_height="match_parent">
 
-  <EditText
-      android:id="@+id/editTextTextPersonName"
-      android:layout_width="match_parent"
-      android:layout_height="48dp"
-      android:layout_marginBottom="10dp"
-      android:ems="10"
-      android:hint="@string/nombre_evento"
-      android:inputType="textPersonName" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        tools:context=".CreateEvent" >
 
-  <EditText
-      android:id="@+id/editTextTextPersonName2"
-      android:layout_width="match_parent"
-      android:layout_height="48dp"
-      android:layout_marginBottom="10dp"
-      android:ems="10"
-      android:hint="@string/tipo"
-      android:inputType="textPersonName" />
+      <ImageView
+          android:id="@+id/new_img"
+          android:layout_width="match_parent"
+          android:layout_height="150dp"
+          android:layout_marginBottom="20dp"
+          android:contentDescription="@string/imagen_del_evento"
+          android:padding="10dp"
+          app:srcCompat="@android:drawable/ic_menu_camera" />
 
-  <EditText
-      android:id="@+id/editTextDate"
-      android:layout_width="match_parent"
-      android:layout_height="48dp"
-      android:layout_marginBottom="10dp"
-      android:ems="10"
-      android:hint="@string/fecha"
-      android:inputType="date" />
+      <Button
+          android:id="@+id/button"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="30dp"
+          android:backgroundTint="#203DA3"
+          android:onClick="loagImg"
+          android:text="@string/seleccionar_imagen" />
 
-  <EditText
-      android:id="@+id/editTextTime"
-      android:layout_width="match_parent"
-      android:layout_height="48dp"
-      android:layout_marginBottom="10dp"
-      android:ems="10"
-      android:hint="@string/hora"
-      android:inputType="time" />
+      <EditText
+          android:id="@+id/editTextTextPersonName"
+          android:layout_width="match_parent"
+          android:layout_height="48dp"
+          android:layout_marginBottom="10dp"
+          android:ems="10"
+          android:hint="@string/nombre_evento"
+          android:inputType="textPersonName" />
 
-  <EditText
-      android:id="@+id/editTextTextPersonName3"
-      android:layout_width="match_parent"
-      android:layout_height="48dp"
-      android:layout_marginBottom="10dp"
-      android:ems="10"
-      android:hint="@string/contacto"
-      android:inputType="textPersonName" />
+      <EditText
+          android:id="@+id/editTextTextPersonName2"
+          android:layout_width="match_parent"
+          android:layout_height="48dp"
+          android:layout_marginBottom="10dp"
+          android:ems="10"
+          android:hint="@string/tipo"
+          android:inputType="textPersonName" />
 
-  <EditText
-      android:id="@+id/editTextNumberSigned"
-      android:layout_width="match_parent"
-      android:layout_height="48dp"
-      android:layout_marginBottom="10dp"
-      android:ems="10"
-      android:hint="@string/valor"
-      android:inputType="numberSigned" />
+      <EditText
+          android:id="@+id/editTextTime"
+          android:layout_width="match_parent"
+          android:layout_height="48dp"
+          android:layout_marginBottom="10dp"
+          android:ems="10"
+          android:hint="@string/hora"
+          android:inputType="time" />
 
-  <Button
-      android:id="@+id/btn_ubication_id"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="10dp"
-      android:backgroundTint="#203DA3"
-      android:onClick="gotoActivityMap"
-      android:text="Ubicacion" />
+      <EditText
+          android:id="@+id/editTextDate"
+          android:layout_width="match_parent"
+          android:layout_height="48dp"
+          android:layout_marginBottom="10dp"
+          android:ems="10"
+          android:hint="@string/fecha"
+          android:inputType="date" />
 
-  <Button
-      android:id="@+id/button2"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="10dp"
-      android:text="Crear Evento"
-      android:backgroundTint="#203DA3"
-      />
-</LinearLayout>
+      <EditText
+          android:id="@+id/editTextNumberSigned"
+          android:layout_width="match_parent"
+          android:layout_height="48dp"
+          android:layout_marginBottom="10dp"
+          android:ems="10"
+          android:hint="@string/valor"
+          android:inputType="numberSigned" />
+
+      <EditText
+          android:id="@+id/editTextTextPersonName3"
+          android:layout_width="match_parent"
+          android:layout_height="48dp"
+          android:layout_marginBottom="10dp"
+          android:ems="10"
+          android:hint="@string/contacto"
+          android:inputType="textPersonName" />
+
+      <Button
+          android:id="@+id/btn_ubication_id"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="10dp"
+          android:backgroundTint="#203DA3"
+          android:onClick="gotoActivityMap"
+          android:text="Ubicacion" />
+
+      <Button
+          android:id="@+id/button2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="10dp"
+          android:backgroundTint="#203DA3"
+          android:text="Crear Evento" />
+    </LinearLayout>
+  </ScrollView>
