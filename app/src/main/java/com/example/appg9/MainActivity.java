@@ -49,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(getApplicationContext(), "onCreate", Toast.LENGTH_SHORT).show();
-        Log.i("información","onCreate");
         //Bloquear rotacion de pantalla
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //ocultar barra de notificaciones
@@ -168,11 +166,10 @@ public class MainActivity extends AppCompatActivity {
         Event event = null;
         Cursor cursor = db.rawQuery("SELECT * FROM " + Utilities.TABLA_EVENTS, null);
         while(cursor.moveToNext()){
-           //Date date = new SimpleDateFormat("dd/mm/yyyy").parse(cursor.getString(3));
-           //Date time = new SimpleDateFormat("dd/mm/yyyy").parse(cursor.getString(4));
 
-            event = new Event(cursor.getInt(0), cursor.getString(1), cursor.getString(2),
-                    cursor.getString(4), cursor.getLong(5) );
+
+            event = new Event(cursor.getInt(0), cursor.getString(1), cursor.getString(2),cursor.getString(3),
+                    cursor.getString(4),cursor.getString(5), cursor.getInt(6) );
 
             eventList.add(event);
 
@@ -182,11 +179,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addEvent() {
-        eventList.add(new Event(R.drawable.one,"evento 1", "generico", new Date(), new Date(), "contacto", 10.000));
-        eventList.add(new Event(R.drawable.two,"evento 2", "generico", new Date(), new Date(), "contacto2", 20.000));
-        eventList.add(new Event(R.drawable.one,"evento 1", "generico", new Date(), new Date(), "contacto", 10.000));
-        eventList.add(new Event(R.drawable.two,"evento 2", "generico", new Date(), new Date(), "contacto2", 20.000));
-
+        eventList.add(new Event(R.drawable.one,"evento 1", "generico", new String(), new String(), "contacto", 10000));
+        eventList.add(new Event(R.drawable.two,"evento 2", "generico", new String(), new String(), "contacto2", 20000));
+        eventList.add(new Event(R.drawable.one,"evento 1", "generico", new String(), new String(), "contacto", 10000));
+        eventList.add(new Event(R.drawable.two,"evento 2", "generico", new String(), new String(), "contacto2", 20000));
     }
 
     public void gotoActivityMap(View view){

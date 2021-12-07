@@ -48,6 +48,12 @@ public class CreateEvent extends AppCompatActivity {
         ContentValues values = new ContentValues();
         //values.put(Utilities.CAMPO_IMG,);
         values.put(Utilities.CAMPO_EVENT, name_event.getText().toString());
+        //values.put(Utilities.CAMPO_IMG,img.getId());
+       values.put(Utilities.CAMPO_TYPE, type.getText().toString());
+        values.put(Utilities.CAMPO_TIME, time.getText().toString());
+        values.put(Utilities.CAMPO_DATE, date.getText().toString());
+        values.put(Utilities.CAMPO_VALUE, value.getText().toString());
+        values.put(Utilities.CAMPO_CONTACT, contact.getText().toString());
 
         Long idResult = db.insert(Utilities.TABLA_EVENTS, Utilities.CAMPO_CONTACT, values);
         Toast.makeText(getApplicationContext(), "Evento Creado" + idResult, Toast.LENGTH_SHORT).show();

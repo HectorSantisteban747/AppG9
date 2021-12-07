@@ -45,7 +45,7 @@
           android:ems="10"
           android:hint="@string/nombre_evento"
           android:inputType="textPersonName"
-          android:text="my event" />
+          />
 
       <EditText
           android:id="@+id/type_form_id"
@@ -55,7 +55,7 @@
           android:ems="10"
           android:hint="@string/tipo"
           android:inputType="textPersonName"
-          android:text="Cultural"/>
+          />
 
       <EditText
           android:id="@+id/time_form_id"
@@ -65,7 +65,7 @@
           android:ems="10"
           android:hint="@string/hora"
           android:inputType="time"
-          android:text="10:30"/>
+          />
 
       <EditText
           android:id="@+id/date_form_id"
@@ -75,7 +75,7 @@
           android:ems="10"
           android:hint="@string/fecha"
           android:inputType="date"
-          android:text="12/10/2021"/>
+          />
 
       <EditText
           android:id="@+id/value_form_id"
@@ -85,7 +85,7 @@
           android:ems="10"
           android:hint="@string/valor"
           android:inputType="numberSigned"
-          android:text="20000"/>
+          />
 
       <EditText
           android:id="@+id/contact_form_id"
@@ -95,7 +95,7 @@
           android:ems="10"
           android:hint="@string/contacto"
           android:inputType="textPersonName"
-          android:text="yo"/>
+          />
 
       <Button
           android:id="@+id/btn_getUbicacion"

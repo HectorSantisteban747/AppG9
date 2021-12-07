@@ -6,22 +6,15 @@ public class Event {
     private int img;
     private String event;
     private String type;
-    private Date date;
-    private Date time;
+    private String date;
+    private String time;
     private String contact;
-    private double value;
+    private int value;
 
     public Event(){}
 
-    public Event(int img, String event, String type, String contact, double value) {
-        this.img = img;
-        this.event = event;
-        this.type = type;
-        this.contact = contact;
-        this.value = value;
-    }
 
-    public Event(int img, String event, String type, Date date, Date time, String contact, double value) {
+    public Event(int img, String event, String type, String date, String time, String contact, int value) {
         this.img = img;
         this.event = event;
         this.type = type;
@@ -43,11 +36,11 @@ public class Event {
         return type;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public Date getTime() {
+    public String getTime() {
         return time;
     }
 
@@ -55,7 +48,7 @@ public class Event {
         return contact;
     }
 
-    public double getValue() {
+    public int getValue() {
         return value;
     }
 }
