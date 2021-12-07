@@ -12,7 +12,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
     <uses-feature android:name="android.hardware.location.gps"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
@@ -23,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppG9" >
         <activity
-            android:name=".MainActivity"
+            android:name=".CreateEvent"
             android:exported="false" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -42,10 +41,13 @@
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".CreateEvent"
+            android:name=".SplashScreen"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".activity_login"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
