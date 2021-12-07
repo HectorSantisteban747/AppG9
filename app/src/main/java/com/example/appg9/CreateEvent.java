@@ -1,18 +1,33 @@
 package com.example.appg9;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.location.LocationProvider;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 public class CreateEvent extends AppCompatActivity {
-
     ImageView img;
 
     @Override
@@ -21,6 +36,7 @@ public class CreateEvent extends AppCompatActivity {
         setContentView(R.layout.activity_create_event);
         img = (ImageView) findViewById(R.id.new_img);
     }
+
     public void gotoActivityMap(View view) {
         Intent newIntent = new Intent(this,MapsActivity.class);
         newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
