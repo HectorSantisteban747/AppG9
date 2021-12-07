@@ -43,8 +43,8 @@ public class AdapterEvents extends RecyclerView.Adapter<AdapterEvents.ViewHolder
         holder.img.setImageResource(eventList.get(position).getImg());
         holder.event.setText(eventList.get(position).getEvent());
         holder.type.setText(eventList.get(position).getType());
-        holder.date.setText(eventList.get(position).getDate().toString());
-        holder.time.setText(eventList.get(position).getTime().toString());
+        //holder.date.setText(eventList.get(position).getDate().toString());
+        //holder.time.setText(eventList.get(position).getTime().toString());
         holder.contact.setText(eventList.get(position).getContact());
         holder.value.setText(String.valueOf( eventList.get(position).getValue()));
     }

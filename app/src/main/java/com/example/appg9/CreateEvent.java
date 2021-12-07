@@ -37,6 +37,9 @@ public class CreateEvent extends AppCompatActivity {
 
     public void crearteEvent(View view){
         registrarUsuario();
+        Intent newIntent = new Intent(this , MainActivity.class);
+        newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(newIntent);
     }
 
     private void registrarUsuario(){

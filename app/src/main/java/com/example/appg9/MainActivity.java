@@ -40,11 +40,12 @@ public class MainActivity extends AppCompatActivity {
         recycler .setLayoutManager(new LinearLayoutManager(this));
         addEvent();
 
-
+        AdapterEvents adapterEvents = new AdapterEvents(eventList);
+        recycler.setAdapter(adapterEvents);
         try {
             consultarEventos();
         } catch (ParseException e) {
-            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), "NO hay datos en la db", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -54,11 +55,11 @@ public class MainActivity extends AppCompatActivity {
         Event event = null;
         Cursor cursor = db.rawQuery("SELECT * FROM " + Utilities.TABLA_EVENTS, null);
         while(cursor.moveToNext()){
-            Date date = new SimpleDateFormat("dd/mm/yyyy").parse(cursor.getString(3));
-            Date time = new SimpleDateFormat("dd/mm/yyyy").parse(cursor.getString(4));
+           //Date date = new SimpleDateFormat("dd/mm/yyyy").parse(cursor.getString(3));
+           //Date time = new SimpleDateFormat("dd/mm/yyyy").parse(cursor.getString(4));
 
-            event = new Event(cursor.getInt(0), cursor.getString(1), cursor.getString(2), date, time,
-                    cursor.getString(5), cursor.getLong(6) );
+            event = new Event(cursor.getInt(0), cursor.getString(1), cursor.getString(2),
+                    cursor.getString(4), cursor.getLong(5) );
 
             eventList.add(event);
 
@@ -84,6 +85,13 @@ public class MainActivity extends AppCompatActivity {
         newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(newIntent);
     }
+
+    public void goToFormNewEvent(View view){
+        Intent newIntent = new Intent(this , CreateEvent.class);
+        newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(newIntent);
+    }
+
     @Override
     protected void onStart(){
         super.onStart();
